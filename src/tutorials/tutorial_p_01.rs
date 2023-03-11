@@ -21,30 +21,3 @@ pub fn play_it() {
         ONE_BILL
     );
 }
-
-pub fn conditionals() {
-    let age: u8 = 72;
-
-    if (age >= 1) && (age <= 18) {
-        println!("not adult, but teenagers ")
-    } else if (age == 21) || (age == 31) {
-        println!("oddy")
-    } else if age > 65 {
-        println!("adult")
-    }
-
-    // rust have a ternary operator;
-    let can_vote = if age > 18 { true } else { false };
-    println!(
-        "can vote : {}",
-        if can_vote {
-            if age % 2 == 0 {
-                "even person"
-            } else {
-                "odd person"
-            }
-        } else {
-            "no"
-        }
-    );
-}
