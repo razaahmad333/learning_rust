@@ -16,21 +16,24 @@ pub fn play_it() {
 
     let [m1, m2, m3, m4, m5] = marks;
     println!("{}, {}, {}, {}, {}", m1, m2, m3, m4, m5);
-    // loop {
-    //     let mark = marks[cnt];
-    //     println!("mark from variable -> {}", mark);
 
-    //     // marks[cnt] = if mark % 2 == 0 { mark } else { mark - 1 };
-    //     sum += mark;
-    //     println!("mark from updated array maybe -> {}", mark);
-    //     cnt += 1;
+    loop {
+        let mut mark = &marks[cnt];
+        println!("mark from variable -> {}", mark);
 
-    //     if cnt == 5 {
-    //         break;
-    //     } else {
-    //         continue;
-    //     }
-    // }
+        let temp = if *mark % 2 == 0 { *mark } else { *mark - 1 };
+        mark = &temp;
+
+        sum += *mark;
+        println!("mark from updated array maybe -> {}", mark);
+        cnt += 1;
+
+        if cnt == 5 {
+            break;
+        } else {
+            continue;
+        }
+    }
 
     // while cnt < marks.len() {
     //     println!(" mark {} ", marks[cnt]);
@@ -44,11 +47,11 @@ pub fn play_it() {
     //     cnt += 1;
     // }
 
-    for mark in marks.iter() {
-        println!("mark -> {}", mark);
-        sum += mark;
-        cnt += 1;
-    }
+    // for mark in marks.iter() {
+    //     println!("mark -> {}", mark);
+    //     sum += mark;
+    //     cnt += 1;
+    // }
 
     println!("students -> {}", marks.len());
     println!("avg marks -> {}", sum / (cnt as i16));
